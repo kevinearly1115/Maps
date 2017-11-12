@@ -11,6 +11,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -86,32 +87,43 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_main);
 
 
+
         Indonesia = new MarkerOptions()
 
                 .position(new LatLng(-6.175392, 106.827178))
 
-                .title("Monumen Nasional");
+                .title("Monumen Nasional")
+
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.us));
+
 
 
         France = new MarkerOptions()
 
                 .position(new LatLng(48.858270, 2.294509))
 
-                .title("Eiffel Tower");
+                .title("Eiffel Tower")
+
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.us));
+
 
 
         UnitedState = new MarkerOptions()
 
                 .position(new LatLng(38.897678, -77.036477))
 
-                .title("The White House");
+                .title("The White House")
+
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.us));
 
 
         Australia = new MarkerOptions()
 
                 .position(new LatLng(-33.856820, 151.215279))
 
-                .title("Sydney Opera House");
+                .title("Sydney Opera House")
+
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.us));
 
 
 
