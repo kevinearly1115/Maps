@@ -1,100 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
+
     android:id="@+id/activity_main"
+
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
+
     android:paddingBottom="16dp"
+
     android:paddingLeft="16dp"
+
     android:paddingRight="16dp"
+
     android:paddingTop="16dp"
     tools:context="id.sch.smktelkom.android.kevin.maps.MainActivity">
 
-    <LinearLayout
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
 
-        android:layout_width="fill_parent"
+        android:id="@+id/map"
 
-        android:layout_height="fill_parent"
+        android:name="com.google.android.gms.maps.MapFragment"
 
-        android:layout_alignParentLeft="true"
+        android:layout_width="match_parent"
 
-        android:layout_alignParentStart="true"
-
-        android:layout_alignParentTop="true"
-
-        android:orientation="vertical">
+        android:layout_height="match_parent" />
 
 
-
-        <LinearLayout
-
-            android:layout_width="fill_parent"
-
-            android:layout_height="wrap_content"
-
-            android:layout_alignParentBottom="true"
-
-            android:layout_alignParentLeft="true"
-
-            android:layout_alignParentStart="true"
-
-            android:orientation="horizontal">
-
-
-
-            <Button
-
-                android:id="@+id/bFrance"
-
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-
-                android:layout_weight="1"
-
-                android:text="France" />
-
-
-
-            <Button
-
-                android:id="@+id/bUS"
-
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-
-                android:layout_weight="1"
-
-                android:text="United States" />
-
-
-            <Button
-
-                android:id="@+id/bAustalia"
-
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-
-                android:layout_weight="1"
-
-                android:text="Australia" />
-
-        </LinearLayout>
-
-
-        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-
-            android:id="@+id/map"
-
-            android:name="com.google.android.gms.maps.MapFragment"
-
-            android:layout_width="match_parent"
-
-            android:layout_height="match_parent" />
-
-
-    </LinearLayout>
 
 </RelativeLayout>
