@@ -25,6 +25,7 @@
         android:orientation="vertical">
 
 
+
         <LinearLayout
 
             android:layout_width="fill_parent"
@@ -40,9 +41,10 @@
             android:orientation="horizontal">
 
 
+
             <Button
 
-                android:id="@+id/bMap"
+                android:id="@+id/bFrance"
 
                 android:layout_width="wrap_content"
 
@@ -50,12 +52,13 @@
 
                 android:layout_weight="1"
 
-                android:text="Map" />
+                android:text="France" />
+
 
 
             <Button
 
-                android:id="@+id/bSatelite"
+                android:id="@+id/bUS"
 
                 android:layout_width="wrap_content"
 
@@ -63,12 +66,12 @@
 
                 android:layout_weight="1"
 
-                android:text="Satelite" />
+                android:text="United States" />
 
 
             <Button
 
-                android:id="@+id/bHybrid"
+                android:id="@+id/bAustalia"
 
                 android:layout_width="wrap_content"
 
@@ -76,7 +79,7 @@
 
                 android:layout_weight="1"
 
-                android:text="Hybrid" />
+                android:text="Australia" />
 
         </LinearLayout>
 

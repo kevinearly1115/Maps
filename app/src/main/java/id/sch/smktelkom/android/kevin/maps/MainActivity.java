@@ -14,10 +14,62 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 
+
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
 
+
+    static final CameraPosition INDONESIA = CameraPosition.builder()
+
+            .target(new LatLng(-6.175392, 106.827178))
+
+            .zoom(17)
+
+            .bearing(295)
+
+            .tilt(90)
+
+            .build();
+
+    static final CameraPosition US = CameraPosition.builder()
+
+            .target(new LatLng(38.897678, -77.036477))
+
+            .zoom(16)
+
+            .bearing(0)
+
+            .tilt(45)
+
+            .build();
+
+    static final CameraPosition AUSTRALIA = CameraPosition.builder()
+
+            .target(new LatLng(-33.856820, 151.215279))
+
+            .zoom(16)
+
+            .bearing(0)
+
+            .tilt(45)
+
+            .build();
+
+    static final CameraPosition FRANCE = CameraPosition.builder()
+
+            .target(new LatLng(48.858270, 2.294509))
+
+            .zoom(16)
+
+            .bearing(0)
+
+            .tilt(45)
+
+            .build();
+
     GoogleMap m_map;
+
     boolean mapReady = false;
+
 
 
     @Override
@@ -29,26 +81,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_main);
 
 
-        Button bMap = (Button) findViewById(R.id.bMap);
+        Button bAustralia = (Button) findViewById(R.id.bAustalia);
 
-        bMap.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-
-            public void onClick(View view) {
-
-                if (mapReady)
-
-                    m_map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-            }
-
-        });
-
-
-        Button bSatelite = (Button) findViewById(R.id.bSatelite);
-
-        bSatelite.setOnClickListener(new View.OnClickListener() {
+        bAustralia.setOnClickListener(new View.OnClickListener() {
 
             @Override
 
@@ -56,16 +91,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 if (mapReady)
 
-                    m_map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                    flyTo(AUSTRALIA);
 
             }
 
         });
 
 
-        Button bHybrid = (Button) findViewById(R.id.bHybrid);
+        Button bFrance = (Button) findViewById(R.id.bFrance);
 
-        bHybrid.setOnClickListener(new View.OnClickListener() {
+        bFrance.setOnClickListener(new View.OnClickListener() {
 
             @Override
 
@@ -73,11 +108,29 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 if (mapReady)
 
-                    m_map.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                    flyTo(FRANCE);
 
             }
 
         });
+
+
+        Button bUS = (Button) findViewById(R.id.bUS);
+
+        bUS.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+
+            public void onClick(View view) {
+
+                if (mapReady)
+
+                    flyTo(US);
+
+            }
+
+        });
+
 
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
@@ -85,6 +138,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
 
     }
+
+
+    private void flyTo(CameraPosition target) {
+
+        m_map.animateCamera(CameraUpdateFactory.newCameraPosition(target), 10000, null);
+
+    }
+
 
 
     @Override
@@ -95,11 +156,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         m_map = map;
 
-        LatLng Gumul = new LatLng(-7.815822, 112.0600773);
+        m_map.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
 
-        CameraPosition target = CameraPosition.builder().target(Gumul).zoom(14).build();
-
-        m_map.moveCamera(CameraUpdateFactory.newCameraPosition(target));
+        flyTo(INDONESIA);
 
     }
 
