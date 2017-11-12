@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,11 +19,11 @@
     android:paddingTop="16dp"
     tools:context="id.sch.smktelkom.android.kevin.maps.MainActivity">
 
-    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    <fragment
 
-        android:id="@+id/map"
+        android:id="@+id/streetviewpanorama"
 
-        android:name="com.google.android.gms.maps.MapFragment"
+        android:name="com.google.android.gms.maps.StreetViewPanoramaFragment"
 
         android:layout_width="match_parent"
 
