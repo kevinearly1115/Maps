@@ -1,5 +1,6 @@
 package id.sch.smktelkom.android.kevin.maps;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -11,9 +12,9 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
 
 
 
@@ -25,13 +26,14 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             .target(new LatLng(-6.175392, 106.827178))
 
-            .zoom(5)
+            .zoom(15)
 
             .bearing(0)
 
             .tilt(45)
 
             .build();
+
 
 
     GoogleMap m_map;
@@ -126,17 +128,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         m_map.moveCamera(CameraUpdateFactory.newCameraPosition(INDONESIA));
 
-        map.addPolyline(new PolylineOptions().geodesic(true)
+        map.addCircle(new CircleOptions()
 
-                .add(IND)
+                .center(IND)
 
-                .add(AUS)
+                .radius(500)
 
-                .add(FRC)
+                .strokeColor(Color.GREEN)
 
-                .add(USA)
-
-                .add(IND));
+                .fillColor(Color.argb(64, 0, 255, 0)));
 
         m_map.addMarker(Indonesia);
 
